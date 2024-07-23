@@ -44,12 +44,14 @@ let switchPlayer = function () {
 };
 
 //roll dice
+document.querySelector(".dice").style.display = "none";
 
 rollBtn.addEventListener("click", function () {
   if (palying) {
-    const diceResult = Math.ceil(Math.random() * 6);
+    const diceResult = Math.floor(Math.random() * 6) + 1;
     //display dice
-    dice.classList.remove("hidden");
+    document.querySelector(".dice").style.display = "block";
+
     dice.src = `./image/dice-${diceResult}.png`;
 
     if (diceResult !== 1) {
