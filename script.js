@@ -27,6 +27,7 @@ const resetGame = function () {
   secondPlayer.classList.remove("player--active");
   firstPlayer.classList.remove("player--winner");
   secondPlayer.classList.remove("player--winner");
+  document.querySelector(".dice").style.display = "none";
   firstPlayerScore.textContent = 0;
   secondPlayerScore.textContent = 0;
   firstPlayerCurrentScore.textContent = 0;
@@ -48,7 +49,7 @@ document.querySelector(".dice").style.display = "none";
 
 rollBtn.addEventListener("click", function () {
   if (palying) {
-    const diceResult = Math.floor(Math.random() * 6) + 1;
+    const diceResult = Math.trunc(Math.random() * 6) + 1;
     //display dice
     document.querySelector(".dice").style.display = "block";
 
